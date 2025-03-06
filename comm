@@ -1,1 +1,4 @@
 protoc --proto_path=. --python_out=.
+pip install protobuf grpcio-tools
+
+protoc --version
