@@ -1,10 +1,28 @@
-import dota_modifiers_pb2
+from pathlib import Path
 
-# Создаём объект
-modifier_entry = dota_modifiers_pb2.CDOTAModifierBuffTableEntry()
-modifier_entry.entry_type = dota_modifiers_pb2.DOTA_MODIFIER_ENTRY_TYPE.DOTA_MODIFIER_ENTRY_TYPE_ACTIVE
-modifier_entry.stack_count = 3
-modifier_entry.creation_time = 123.456
+import dota_commonmessages_pb2
 
-# Выводим объект
-print(modifier_entry)
+
+BASE_PATH = Path(__file__).resolve().parent
+
+PING_FILEPATH = BASE_PATH / 'dota_commonmessages.txt'
+
+
+def main() -> None:
+    ping = dota_commonmessages_pb2.CDOTAMsg_ItemAlert()
+    # ping.ok = True
+    print("ping: ", ping.SerializeToString())
+
+    with PING_FILEPATH.open('wb') as f:
+        f.write(ping.SerializeToString())
+
+
+
+
+
+
+
+
+
+if __name__ == '__main__':
+    main()

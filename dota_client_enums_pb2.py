@@ -47,3 +47,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_EPARTYBEACONTYPE']._serialized_start=2993
   _globals['_EPARTYBEACONTYPE']._serialized_end=3078
 # @@protoc_insertion_point(module_scope)
+
+
